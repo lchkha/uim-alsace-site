@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pôle formation UIMM Alsace | Centre de formation aux métiers de l'industrie</title>
+  <meta name="description" content="Explorez notre centre de formation aux métiers de l'industrie en Alsace : alternance, formation continue, reconversion du Bac Pro à l'Ingénieur à Strasbourg, Mulhouse, Colmar et Reichshoffen.">
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+
+  <!-- Google Fonts: Mulish & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Mulish:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Mulish', 'system-ui', 'sans-serif'],
+            heading: ['Montserrat', 'Mulish', 'sans-serif'],
+          },
+          colors: {
+            uimm: {
+              navy: '#002f3d',
+              dark: '#005973',
+              cyan: '#009fe3',
+              green: '#0c7d72',
+              greenHover: '#30a5a1',
+              orange: '#ff8a00',
+              yellow: '#ffcc19',
+              red: '#e2003b',
+              purple: '#792050',
+              pink: '#cd1997',
+              lightTeal: '#cae0de',
+              bgLight: '#f8fafc',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom animation and glassmorphism styles */
+    .hero-gradient {
+      background: linear-gradient(135deg, rgba(0, 47, 61, 0.94) 0%, rgba(0, 89, 115, 0.88) 100%);
+    }
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 30px -10px rgba(0, 47, 61, 0.15);
+    }
+    .mega-menu {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+      transform: translateY(8px);
+    }
+    .group:hover .mega-menu {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    [x-cloak] { display: none !important; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+  <!-- ======================================================== -->
+  <!-- 1. TOP BANNER / ANNOUNCEMENT                             -->
+  <!-- ======================================================== -->
+  <div id="top-announcement" class="bg-gradient-to-r from-uimm-dark via-uimm-green to-uimm-cyan text-white text-xs sm:text-sm py-2 px-4 shadow-sm relative transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <div class="flex items-center space-x-2 truncate">
+        <span class="bg-uimm-orange text-white text-[10px] font-black uppercase px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm animate-pulse">
+          <i data-lucide="sparkles" class="w-3 h-3"></i> NOUVEAU
+        </span>
+        <span class="font-medium truncate">
+          <strong>Trouve ta formation !</strong> L'alternance, ton meilleur tremplin dans l'industrie en Alsace.
+        </span>
+      </div>
+      <div class="flex items-center space-x-3 shrink-0">
+        <a href="#catalogue" class="underline hover:text-uimm-yellow transition font-semibold text-xs hidden sm:inline">
+          Découvrir les sessions 2026-2027 &rarr;
+        </a>
+        <button onclick="document.getElementById('top-announcement').style.display='none'" class="text-white/80 hover:text-white p-1" title="Fermer le bandeau">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 2. UTILITY BAR                                           -->
+  <!-- ======================================================== -->
+  <div class="bg-uimm-navy text-slate-300 text-xs py-2 px-4 border-b border-white/10 hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-6">
+        <a href="tel:0388123456" class="flex items-center hover:text-white transition group">
+          <i data-lucide="phone" class="w-3.5 h-3.5 mr-1.5 text-uimm-cyan group-hover:scale-110 transition-transform"></i>
+          <span class="font-bold text-white tracking-wide">03 88 12 34 56</span>
+          <span class="text-slate-400 ml-1 text-[11px]">(Accueil Pôle Alsace)</span>
+        </a>
+        <span class="text-white/20">|</span>
+        <div class="flex items-center space-x-3 text-[11px] text-slate-300">
+          <span class="flex items-center"><i data-lucide="map-pin" class="w-3 h-3 mr-1 text-uimm-orange"></i> 4 Centres : Strasbourg • Mulhouse • Colmar • Reichshoffen</span>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <a href="https://extranet.cfai-alsace.fr/netypareo/index.php" target="_blank" rel="noopener" class="hover:text-uimm-yellow transition flex items-center font-medium">
+          <i data-lucide="user-check" class="w-3.5 h-3.5 mr-1"></i> NetYParéo (Apprentis)
+        </a>
+        <span class="text-white/20">|</span>
+        <a href="https://connect.easi-training.fr/#/login" target="_blank" rel="noopener" class="hover:text-uimm-yellow transition flex items-center font-medium">
+          <i data-lucide="laptop" class="w-3.5 h-3.5 mr-1"></i> EASI (E-learning)
+        </a>
+        <span class="text-white/20">|</span>
+        <a href="#entreprises" class="hover:text-uimm-cyan transition font-medium">
+          Espace Entreprises
+        </a>
+        <span class="text-white/20">|</span>
+        <button onclick="openContactModal()" class="bg-uimm-orange hover:bg-orange-600 text-white font-bold px-2.5 py-1 rounded transition flex items-center space-x-1 shadow-sm">
+          <i data-lucide="mail" class="w-3 h-3"></i>
+          <span>Nous contacter</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 3. MAIN HEADER WITH OFFICIAL LOGO & NAVIGATION           -->
+  <!-- ======================================================== -->
+  <header class="bg-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- OFFICIAL LOGO -->
+        <a href="#" class="flex items-center gap-3 group shrink-0" title="Pôle formation UIMM Alsace - Retour à l'accueil">
+          <img src="assets/logo.jpg" alt="Logo Officiel Pôle formation UIMM Alsace - La Fabrique de l'Avenir" class="h-16 w-auto object-contain rounded shadow-sm border border-slate-100 group-hover:scale-105 transition-transform">
+          <div class="hidden xl:flex flex-col border-l border-slate-200 pl-3">
+            <span class="font-heading font-black text-xs text-uimm-navy uppercase tracking-wider leading-tight">Pôle Formation</span>
+            <span class="font-heading font-bold text-sm text-uimm-dark tracking-wide">UIMM ALSACE</span>
+            <span class="text-[10px] text-uimm-red font-extrabold uppercase tracking-widest mt-0.5">La Fabrique de l'Avenir</span>
+          </div>
+        </a>
+
+        <!-- DESKTOP MEGA NAVIGATION -->
+        <nav class="hidden lg:flex items-center space-x-1 xl:space-x-3 text-sm font-semibold text-slate-700">
+          
+          <!-- MENU 1: Jeune / Alternant -->
+          <div class="relative group">
+            <button class="px-3 py-2 rounded-lg hover:text-uimm-dark hover:bg-slate-100 flex items-center space-x-1 transition group-hover:text-uimm-green">
+              <span>Jeune / Alternant</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="mega-menu absolute top-full left-0 w-80 bg-white border border-slate-100 shadow-2xl rounded-xl p-4 z-50">
+              <div class="text-xs uppercase font-extrabold text-uimm-green tracking-wider mb-2">Choisir mon alternance</div>
+              <ul class="space-y-2 text-xs">
+                <li><a href="https://candidature-cfai-alsace.hub3e.com" target="_blank" class="flex items-center p-2 rounded hover:bg-slate-50 font-bold text-uimm-red"><i data-lucide="send" class="w-3.5 h-3.5 mr-2"></i> Candidater en ligne (Hub3E)</a></li>
+                <li><a href="#domaines" class="flex items-center p-2 rounded hover:bg-slate-50 text-slate-700"><i data-lucide="grid" class="w-3.5 h-3.5 mr-2 text-uimm-dark"></i> Nos 15 domaines industriels</a></li>
+                <li><a href="#catalogue" onclick="filterByTag('Alternance')" class="flex items-center p-2 rounded hover:bg-slate-50 text-slate-700"><i data-lucide="graduation-cap" class="w-3.5 h-3.5 mr-2 text-uimm-dark"></i> Formations en alternance (CAP à Ingénieur)</a></li>
+                <li><a href="#pourquoi-pole" class="flex items-center p-2 rounded hover:bg-slate-50 text-slate-700"><i data-lucide="check-circle" class="w-3.5 h-3.5 mr-2 text-uimm-green"></i> Pourquoi choisir l'alternance ?</a></li>
+                <li><a href="#guide-alternance" class="flex items-center p-2 rounded hover:bg-slate-50 text-slate-700"><i data-lucide="file-text" class="w-3.5 h-3.5 mr-2 text-uimm-orange"></i> Télécharger le Guide Alternance PDF</a></li>
+              </ul>
+              <div class="border-t border-slate-100 mt-3 pt-3 text-xs">
+                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Vie de l'apprenti</div>
+                <ul class="space-y-1">
+                  <li><a href="#centres" class="text-slate-600 hover:text-uimm-dark block py-1">Vie dans nos centres & Aides financières</a></li>
+                  <li><a href="https://extranet.cfai-alsace.fr/netypareo/index.php" target="_blank" class="text-slate-600 hover:text-uimm-dark block py-1 font-semibold">Accès NetYParéo & EASI</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- MENU 2: Salarié -->
+          <div class="relative group">
+            <button class="px-3 py-2 rounded-lg hover:text-uimm-dark hover:bg-slate-100 flex items-center space-x-1 transition group-hover:text-uimm-purple">
+              <span>Salarié</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="mega-menu absolute top-full left-0 w-80 bg-white border border-slate-100 shadow-2xl rounded-xl p-4 z-50">
+              <div class="text-xs uppercase font-extrabold text-uimm-purple tracking-wider mb-2">Formation Continue</div>
+              <ul class="space-y-2 text-xs">
+                <li><a href="#catalogue" onclick="filterByTag('Formation continue')" class="flex items-center p-2 rounded hover:bg-slate-50 text-slate-700 font-bold"><i data-lucide="book-open" class="w-3.5 h-3.5 mr-2 text-uimm-purple"></i> Catalogue formation continue</a></li>
+                <li><a href="#catalogue" onclick="filterByDomain('Management')" class="flex items-center p-2 rounded hover:bg-slate-50 text-slate-700"><i data-lucide="users" class="w-3.5 h-3.5 mr-2 text-uimm-purple"></i> Formations en management</a></li>
+                <li><a href="#ifti" class="flex items-center p-2 rounded hover:bg-slate-50 text-slate-700"><i data-lucide="cpu" class="w-3.5 h-3.5 mr-2 text-uimm-green"></i> IFTI : Formations sur-mesure</a></li>
+                <li><a href="#financements" class="flex items-center p-2 rounded hover:bg-slate-50 text-slate-700"><i data-lucide="credit-card" class="w-3.5 h-3.5 mr-2 text-uimm-orange"></i> Dispositifs & Financements (CPF, OPCO)</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- MENU 3: Entreprise -->
+          <div class="relative group">
+            <button class="px-3 py-2 rounded-lg hover:text-uimm-dark hover:bg-slate-100 flex items-center space-x-1 transition group-hover:text-uimm-orange">
+              <span>Entreprise</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="mega-menu absolute top-full left-0 w-80 bg-white border border-slate-100 shadow-2xl rounded-xl p-4 z-50">
+              <div class="text-xs uppercase font-extrabold text-uimm-orange tracking-wider mb-2">Partenaire Compétences</div>
+              <ul class="space-y-2 text-xs">
+                <li><a href="#entreprises" class="flex items-center p-2 rounded hover:bg-slate-50 font-bold text-slate-800"><i data-lucide="user-plus" class="w-3.5 h-3.5 mr-2 text-uimm-orange"></i> Recruter un(e) alternant(e)</a></li>
+                <li><a href="#entreprises" class="flex items-center p-2 rounded hover:bg-slate-50 text-slate-700"><i data-lucide="briefcase" class="w-3.5 h-3.5 mr-2 text-uimm-dark"></i> Former mes collaborateurs</a></li>
+                <li><a href="#ifti" class="flex items-center p-2 rounded hover:bg-slate-50 text-slate-700"><i data-lucide="sliders" class="w-3.5 h-3.5 mr-2 text-uimm-green"></i> Solutions IFTI sur-mesure</a></li>
+                <li><a href="#entreprises" class="flex items-center p-2 rounded hover:bg-slate-50 text-slate-700"><i data-lucide="trending-up" class="w-3.5 h-3.5 mr-2 text-uimm-cyan"></i> Accompagnement GEPP & Audit RH</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- MENU 4: Demandeur d'emploi -->
+          <div class="relative group">
+            <button class="px-3 py-2 rounded-lg hover:text-uimm-dark hover:bg-slate-100 flex items-center space-x-1 transition group-hover:text-uimm-pink">
+              <span>Demandeur d'emploi</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="mega-menu absolute top-full left-0 w-80 bg-white border border-slate-100 shadow-2xl rounded-xl p-4 z-50">
+              <div class="text-xs uppercase font-extrabold text-uimm-pink tracking-wider mb-2">Reconversion & Emploi</div>
+              <ul class="space-y-2 text-xs">
+                <li><a href="#reconversion" class="flex items-center p-2 rounded hover:bg-slate-50 font-bold text-uimm-pink"><i data-lucide="repeat" class="w-3.5 h-3.5 mr-2"></i> Se reconvertir vers l'industrie</a></li>
+                <li><a href="#catalogue" onclick="filterByTag('Formation continue')" class="flex items-center p-2 rounded hover:bg-slate-50 text-slate-700"><i data-lucide="check-square" class="w-3.5 h-3.5 mr-2 text-uimm-dark"></i> Nos formations pour l'emploi certifiantes</a></li>
+                <li><a href="https://insertion-professionelle-alsace.hub3e.com/?provenance=prospects%20pole%20emploi%20" target="_blank" class="flex items-center p-2 rounded hover:bg-slate-50 text-slate-700"><i data-lucide="file-check" class="w-3.5 h-3.5 mr-2 text-uimm-green"></i> Inscription accompagnement retour à l'emploi</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- MENU 5: Nos Centres -->
+          <div class="relative group">
+            <button class="px-3 py-2 rounded-lg hover:text-uimm-dark hover:bg-slate-100 flex items-center space-x-1 transition group-hover:text-uimm-cyan">
+              <span>Nos Centres</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="mega-menu absolute top-full right-0 w-80 bg-white border border-slate-100 shadow-2xl rounded-xl p-4 z-50">
+              <div class="text-xs uppercase font-extrabold text-uimm-dark tracking-wider mb-2">4 Campus en Alsace</div>
+              <ul class="space-y-2 text-xs">
+                <li><a href="#centres" onclick="switchCenterTab('strasbourg')" class="flex items-center p-2 rounded hover:bg-slate-50 font-bold text-slate-800"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-2 text-uimm-orange"></i> Strasbourg (Eckbolsheim)</a></li>
+                <li><a href="#centres" onclick="switchCenterTab('mulhouse')" class="flex items-center p-2 rounded hover:bg-slate-50 font-bold text-slate-800"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-2 text-uimm-green"></i> Mulhouse</a></li>
+                <li><a href="#centres" onclick="switchCenterTab('colmar')" class="flex items-center p-2 rounded hover:bg-slate-50 font-bold text-slate-800"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-2 text-uimm-cyan"></i> Colmar</a></li>
+                <li><a href="#centres" onclick="switchCenterTab('reichshoffen')" class="flex items-center p-2 rounded hover:bg-slate-50 font-bold text-slate-800"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-2 text-uimm-red"></i> Reichshoffen</a></li>
+              </ul>
+              <div class="border-t border-slate-100 mt-2 pt-2 text-[11px] text-slate-500">
+                Partenariats ingénieurs : ITII Alsace, INSA Strasbourg, ENSISA Mulhouse.
+              </div>
+            </div>
+          </div>
+
+        </nav>
+
+        <!-- HEADER ACTIONS -->
+        <div class="flex items-center space-x-3">
+          <!-- Favoris Button with Badge -->
+          <button onclick="openFavoritesModal()" class="relative p-2 text-slate-600 hover:text-uimm-red hover:bg-slate-100 rounded-full transition" title="Mes Formations Favorites">
+            <i data-lucide="heart" class="w-5 h-5"></i>
+            <span id="fav-count-badge" class="absolute -top-1 -right-1 bg-uimm-red text-white text-[10px] font-black rounded-full h-4 w-4 flex items-center justify-center">0</span>
+          </button>
+
+          <!-- Search quick trigger -->
+          <a href="#recherche-rapide" class="p-2 text-slate-600 hover:text-uimm-dark hover:bg-slate-100 rounded-full transition" title="Rechercher une formation">
+            <i data-lucide="search" class="w-5 h-5"></i>
+          </a>
+
+          <!-- Primary CTA Candidater -->
+          <a href="https://candidature-cfai-alsace.hub3e.com" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center bg-uimm-green hover:bg-uimm-greenHover text-white px-4 py-2.5 rounded-lg font-heading font-bold text-xs uppercase tracking-wider shadow hover:shadow-lg transition">
+            <i data-lucide="send" class="w-3.5 h-3.5 mr-1.5"></i>
+            <span>Candidater</span>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-700 hover:text-uimm-dark rounded-lg" aria-label="Ouvrir le menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+      <div class="flex flex-col space-y-2 text-sm font-semibold">
+        <a href="#jeunes" class="p-2 rounded text-slate-700 hover:bg-slate-100 flex items-center justify-between">
+          <span>Jeune / Alternant</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="#salaries" class="p-2 rounded text-slate-700 hover:bg-slate-100 flex items-center justify-between">
+          <span>Salarié</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="#entreprises" class="p-2 rounded text-slate-700 hover:bg-slate-100 flex items-center justify-between">
+          <span>Entreprise</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="#reconversion" class="p-2 rounded text-slate-700 hover:bg-slate-100 flex items-center justify-between">
+          <span>Demandeur d'emploi</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="#centres" class="p-2 rounded text-slate-700 hover:bg-slate-100 flex items-center justify-between">
+          <span>Nos 4 Centres en Alsace</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="#domaines" class="p-2 rounded text-slate-700 hover:bg-slate-100 flex items-center justify-between">
+          <span>Nos 15 Domaines de Formation</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+      </div>
+      <div class="pt-3 border-t border-slate-100 flex flex-col space-y-2">
+        <a href="https://candidature-cfai-alsace.hub3e.com" target="_blank" class="w-full text-center bg-uimm-green text-white py-2.5 rounded-lg font-bold text-xs uppercase">
+          Candidater en ligne (Hub3E)
+        </a>
+        <button onclick="openContactModal()" class="w-full text-center bg-uimm-orange text-white py-2.5 rounded-lg font-bold text-xs uppercase">
+          Nous Contacter
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================== -->
+  <!-- 4. HERO SECTION WITH MULTI-CRITERIA SEARCH               -->
+  <!-- ======================================================== -->
+  <section class="relative bg-uimm-navy text-white overflow-hidden" id="recherche-rapide">
+    <!-- Background visual layer with overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000" alt="Atelier industriel Pôle formation UIMM Alsace" class="w-full h-full object-cover opacity-20 filter grayscale contrast-125">
+      <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 text-xs font-semibold uppercase tracking-wider text-uimm-yellow mb-6">
+          <i data-lucide="award" class="w-4 h-4 text-uimm-yellow"></i>
+          <span>1er Réseau de Formation Industrielle en Alsace</span>
+        </div>
+
+        <h1 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight mb-6">
+          Formez-vous aujourd'hui pour <span class="text-uimm-cyan underline decoration-uimm-green decoration-4">performer demain</span>.
+        </h1>
+
+        <p class="text-slate-200 text-base sm:text-lg md:text-xl font-light mb-8 leading-relaxed max-w-2xl">
+          Depuis plus de 30 ans, le Pôle formation UIMM Alsace forme les talents de demain. Du <strong>CAP au diplôme d'Ingénieur</strong>, en alternance ou en formation continue, trouvez la voie qui vous correspond.
+        </p>
+
+        <!-- INTERACTIVE SEARCH BOX -->
+        <div class="bg-white rounded-2xl p-3 sm:p-4 shadow-2xl border border-white/20 text-slate-800">
+          <form id="search-form" onsubmit="event.preventDefault(); triggerSearch();" class="grid grid-cols-1 md:grid-cols-12 gap-2 sm:gap-3 items-center">
+            
+            <!-- Keyword input -->
+            <div class="md:col-span-5 flex items-center bg-slate-50 rounded-xl px-3 py-2.5 border border-slate-200 focus-within:border-uimm-green focus-within:bg-white transition">
+              <i data-lucide="search" class="w-4 h-4 text-slate-400 mr-2 shrink-0"></i>
+              <input type="text" id="search-keyword" placeholder="Ex: Maintenance, Usinage, Robotique, BTS..." class="w-full bg-transparent text-xs sm:text-sm focus:outline-none placeholder-slate-400 font-medium">
+            </div>
+
+            <!-- Domain select -->
+            <div class="md:col-span-4 flex items-center bg-slate-50 rounded-xl px-3 py-2.5 border border-slate-200 focus-within:border-uimm-green focus-within:bg-white transition">
+              <i data-lucide="layers" class="w-4 h-4 text-slate-400 mr-2 shrink-0"></i>
+              <select id="search-domain" class="w-full bg-transparent text-xs sm:text-sm focus:outline-none text-slate-700 font-medium">
+                <option value="">Tous les domaines</option>
+                <option value="Automatisme - Robotique">Automatisme - Robotique</option>
+                <option value="Chaudronnerie - Tuyauterie - Soudage">Chaudronnerie - Soudage</option>
+                <option value="Électricité - Électrotechnique - Énergie">Électricité - Électrotechnique</option>
+                <option value="Informatique - Numérique - Cybersécurité - IA">Informatique & IA</option>
+                <option value="Logistique - Supply">Logistique - Supply Chain</option>
+                <option value="Maintenance - Techniques industrielles">Maintenance Industrielle</option>
+                <option value="Méthodes - Études - Conception">Conception (CPI / CAO)</option>
+                <option value="Production - Performance industrielle">Production & Lean</option>
+                <option value="Usinage - Outillage">Usinage - Tournage - Fraisage</option>
+                <option value="Formations réglementaires et QHSE">QHSE & Habilitations</option>
+                <option value="Management">Management & Leadership</option>
+              </select>
+            </div>
+
+            <!-- Center location select -->
+            <div class="md:col-span-3">
+              <button type="submit" class="w-full bg-uimm-green hover:bg-uimm-greenHover text-white py-2.5 px-4 rounded-xl font-heading font-bold text-xs uppercase tracking-wider shadow flex items-center justify-center space-x-1.5 transition">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                <span>Rechercher</span>
+              </button>
+            </div>
+
+          </form>
+
+          <div class="mt-2.5 pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
+            <span class="font-semibold text-slate-600">Recherches fréquentes :</span>
+            <div class="flex flex-wrap gap-1.5">
+              <button onclick="quickFilter('BTS Maintenance')" class="bg-slate-100 hover:bg-uimm-lightTeal px-2 py-0.5 rounded text-[11px] transition">BTS Maintenance</button>
+              <button onclick="quickFilter('Robotique')" class="bg-slate-100 hover:bg-uimm-lightTeal px-2 py-0.5 rounded text-[11px] transition">Robotique / IA</button>
+              <button onclick="quickFilter('Soudage')" class="bg-slate-100 hover:bg-uimm-lightTeal px-2 py-0.5 rounded text-[11px] transition">Soudage</button>
+              <button onclick="quickFilter('Ingénieur')" class="bg-slate-100 hover:bg-uimm-lightTeal px-2 py-0.5 rounded text-[11px] transition">Ingénieur ITII</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 5. KEY FIGURES / CHIFFRES CLÉS RÉELS                      -->
+  <!-- ======================================================== -->
+  <section class="bg-white border-b border-slate-200 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-5 gap-6 text-center divide-y lg:divide-y-0 lg:divide-x divide-slate-100">
+        
+        <div class="p-2">
+          <div class="text-3xl sm:text-4xl font-heading font-black text-uimm-green mb-1">94%</div>
+          <div class="text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wide">Taux de Recommandation</div>
+          <p class="text-[11px] text-slate-400 mt-0.5">Enquête satisfaction apprenants</p>
+        </div>
+
+        <div class="p-2">
+          <div class="text-3xl sm:text-4xl font-heading font-black text-uimm-orange mb-1">1 500</div>
+          <div class="text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wide">Apprentis / an</div>
+          <p class="text-[11px] text-slate-400 mt-0.5">Du CAP au Bac+5 Ingénieur</p>
+        </div>
+
+        <div class="p-2">
+          <div class="text-3xl sm:text-4xl font-heading font-black text-uimm-dark mb-1">89%</div>
+          <div class="text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wide">Taux de Réussite</div>
+          <p class="text-[11px] text-slate-400 mt-0.5">Aux examens d'État & CQP</p>
+        </div>
+
+        <div class="p-2">
+          <div class="text-3xl sm:text-4xl font-heading font-black text-uimm-red mb-1">1 250</div>
+          <div class="text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wide">Entreprises Partenaires</div>
+          <p class="text-[11px] text-slate-400 mt-0.5">En Alsace et Grand Est</p>
+        </div>
+
+        <div class="col-span-2 lg:col-span-1 p-2 flex flex-col items-center justify-center">
+          <div class="inline-flex items-center space-x-2 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-lg shadow-sm">
+            <i data-lucide="shield-check" class="w-6 h-6 text-uimm-green shrink-0"></i>
+            <div class="text-left">
+              <div class="text-[11px] font-black uppercase text-slate-900 leading-tight">Certifié QUALIOPI</div>
+              <div class="text-[9px] text-slate-500">Actions de formation & Apprentissage</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 6. PERSONAS / PARCOURS ORIENTATION (4 Profils)           -->
+  <!-- ======================================================== -->
+  <section class="py-16 bg-slate-50" id="parcours">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-xs font-heading font-extrabold text-uimm-green uppercase tracking-widest mb-2">Un parcours adapté à vos ambitions</h2>
+        <p class="text-2xl sm:text-3xl font-heading font-black text-uimm-navy">Explorez les opportunités selon votre profil</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- CARD 1: JEUNE / ALTERNANT -->
+        <div class="card-hover bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden flex flex-col border-t-4 border-t-uimm-green" id="jeunes">
+          <div class="p-6 flex-grow">
+            <div class="w-12 h-12 bg-uimm-green/10 text-uimm-green rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Jeune / Alternant</h3>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+              Apprenez un métier passionnant rémunéré de 53% à 100% du SMIC. Formation 100% gratuite et diplômes reconnus par l'État.
+            </p>
+            <ul class="text-xs text-slate-600 space-y-1.5 mb-4">
+              <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-uimm-green mr-1.5"></i> Du CAP au Bac+5 Ingénieur</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-uimm-green mr-1.5"></i> Aide à la recherche d'entreprise</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-uimm-green mr-1.5"></i> Aides logement, permis (500€)</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <a href="https://candidature-cfai-alsace.hub3e.com" target="_blank" class="text-uimm-green font-heading font-bold text-xs uppercase flex items-center hover:underline">
+              Candidater en ligne &rarr;
+            </a>
+            <span class="text-[10px] text-slate-400 font-semibold">CFAI Alsace</span>
+          </div>
+        </div>
+
+        <!-- CARD 2: SALARIÉ -->
+        <div class="card-hover bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden flex flex-col border-t-4 border-t-uimm-purple" id="salaries">
+          <div class="p-6 flex-grow">
+            <div class="w-12 h-12 bg-uimm-purple/10 text-uimm-purple rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="trending-up" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Salarié</h3>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+              Montez en compétences, certifiez votre expertise et faites évoluer votre carrière industrielle grâce à nos cursus certifiants.
+            </p>
+            <ul class="text-xs text-slate-600 space-y-1.5 mb-4">
+              <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-uimm-purple mr-1.5"></i> Certificats CQP de branche</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-uimm-purple mr-1.5"></i> Solution sur-mesure IFTI</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-uimm-purple mr-1.5"></i> Financement CPF, plan employeur</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <button onclick="filterByTag('Formation continue')" class="text-uimm-purple font-heading font-bold text-xs uppercase flex items-center hover:underline">
+              Voir les formations &rarr;
+            </button>
+            <span class="text-[10px] text-slate-400 font-semibold">AFPI Alsace</span>
+          </div>
+        </div>
+
+        <!-- CARD 3: ENTREPRISE -->
+        <div class="card-hover bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden flex flex-col border-t-4 border-t-uimm-orange" id="entreprises">
+          <div class="p-6 flex-grow">
+            <div class="w-12 h-12 bg-uimm-orange/10 text-uimm-orange rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="building" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Entreprise</h3>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+              Anticipez vos besoins, recrutez des alternants motivés et formez vos équipes sur les technologies de pointe de l'Industrie 4.0.
+            </p>
+            <ul class="text-xs text-slate-600 space-y-1.5 mb-4">
+              <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-uimm-orange mr-1.5"></i> Mise en relation candidats ciblés</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-uimm-orange mr-1.5"></i> Accompagnement GEPP & RH</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-uimm-orange mr-1.5"></i> Formations inter / intra entreprise</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <button onclick="openContactModal('Entreprise')" class="text-uimm-orange font-heading font-bold text-xs uppercase flex items-center hover:underline">
+              Recruter un alternant &rarr;
+            </button>
+            <span class="text-[10px] text-slate-400 font-semibold">UIMM Alsace</span>
+          </div>
+        </div>
+
+        <!-- CARD 4: DEMANDEUR D'EMPLOI -->
+        <div class="card-hover bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden flex flex-col border-t-4 border-t-uimm-pink" id="reconversion">
+          <div class="p-6 flex-grow">
+            <div class="w-12 h-12 bg-uimm-pink/10 text-uimm-pink rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="user-check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Demandeur d'emploi</h3>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+              Reconvertissez-vous dans un secteur porteur : 125 000 emplois industriels en Alsace et plus de 5 000 recrutements par an jusqu'en 2028.
+            </p>
+            <ul class="text-xs text-slate-600 space-y-1.5 mb-4">
+              <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-uimm-pink mr-1.5"></i> Formations financées à 100%</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-uimm-pink mr-1.5"></i> POEC & Titres Professionnels</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-uimm-pink mr-1.5"></i> 90%+ de retour à l'emploi</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <button onclick="openContactModal('Demandeur d emploi')" class="text-uimm-pink font-heading font-bold text-xs uppercase flex items-center hover:underline">
+              Se reconvertir &rarr;
+            </button>
+            <span class="text-[10px] text-slate-400 font-semibold">France Travail / Région</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 7. LES 15 DOMAINES DE FORMATION DU SITE INITIAL           -->
+  <!-- ======================================================== -->
+  <section class="py-16 bg-white border-y border-slate-200" id="domaines">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-heading font-extrabold text-uimm-dark uppercase tracking-widest">Une offre complète et spécialisée</span>
+          <h2 class="text-2xl sm:text-3xl font-heading font-black text-uimm-navy mt-1">Nos 15 Domaines de Formation Industrielle</h2>
+          <p class="text-slate-500 text-sm mt-1">Cliquez sur un domaine pour filtrer instantanément le catalogue de formations.</p>
+        </div>
+        <button onclick="resetFilters()" class="text-xs font-bold text-uimm-green hover:underline flex items-center">
+          <i data-lucide="rotate-ccw" class="w-3.5 h-3.5 mr-1"></i> Réinitialiser les filtres
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        
+        <!-- Domaine 1 -->
+        <button onclick="filterByDomain('Automatisme - Robotique')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-uimm-green hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-emerald-100 text-uimm-green flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="bot" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-uimm-green transition leading-tight">Automatisme - Robotique</div>
+          <div class="text-[11px] text-slate-500 mt-1">Automates, cobotique, TIA portal, cobots</div>
+        </button>
+
+        <!-- Domaine 2 -->
+        <button onclick="filterByDomain('Chaudronnerie - Tuyauterie - Soudage')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-uimm-orange hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-orange-100 text-uimm-orange flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="flame" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-uimm-orange transition leading-tight">Chaudronnerie - Soudage</div>
+          <div class="text-[11px] text-slate-500 mt-1">TIG, MIG/MAG, tuyauterie, métaux</div>
+        </button>
+
+        <!-- Domaine 3 -->
+        <button onclick="filterByDomain('Électricité - Électrotechnique - Énergie')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-uimm-yellow hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-amber-600 transition leading-tight">Électricité - Électrotechnique</div>
+          <div class="text-[11px] text-slate-500 mt-1">Réseaux industriels, armoires, énergie</div>
+        </button>
+
+        <!-- Domaine 4 -->
+        <button onclick="filterByDomain('Informatique - Numérique - Cybersécurité - IA')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-uimm-cyan hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-sky-100 text-uimm-cyan flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="terminal" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-uimm-cyan transition leading-tight">Informatique - Cyber - IA</div>
+          <div class="text-[11px] text-slate-500 mt-1">Industrie 4.0, IoT, cybersécurité, IA</div>
+        </button>
+
+        <!-- Domaine 5 -->
+        <button onclick="filterByDomain('Logistique - Supply')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-uimm-dark hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-teal-100 text-uimm-dark flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="truck" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-uimm-dark transition leading-tight">Logistique - Supply Chain</div>
+          <div class="text-[11px] text-slate-500 mt-1">Gestion flux, entreposage, CACES</div>
+        </button>
+
+        <!-- Domaine 6 -->
+        <button onclick="filterByDomain('Maintenance - Techniques industrielles')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-uimm-green hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-emerald-100 text-uimm-green flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="wrench" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-uimm-green transition leading-tight">Maintenance Industrielle</div>
+          <div class="text-[11px] text-slate-500 mt-1">Préventive, curative, connectée, IFTI</div>
+        </button>
+
+        <!-- Domaine 7 -->
+        <button onclick="filterByDomain('Méthodes - Études - Conception')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-indigo-500 hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="pen-tool" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-indigo-600 transition leading-tight">Conception (CPI / CAO)</div>
+          <div class="text-[11px] text-slate-500 mt-1">Solidworks, Catia, modélisation 3D</div>
+        </button>
+
+        <!-- Domaine 8 -->
+        <button onclick="filterByDomain('Production - Performance industrielle')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-rose-500 hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="settings" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-rose-600 transition leading-tight">Production & Lean</div>
+          <div class="text-[11px] text-slate-500 mt-1">5S, Kaizen, Six Sigma, pilotage lignes</div>
+        </button>
+
+        <!-- Domaine 9 -->
+        <button onclick="filterByDomain('Usinage - Outillage')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-slate-800 hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-slate-200 text-slate-800 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="disc" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-slate-900 transition leading-tight">Usinage & Outillage</div>
+          <div class="text-[11px] text-slate-500 mt-1">Tournage, Fraisage CN, FAO 5 axes</div>
+        </button>
+
+        <!-- Domaine 10 -->
+        <button onclick="filterByDomain('Formations réglementaires et QHSE')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-red-500 hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-red-100 text-uimm-red flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="shield-alert" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-uimm-red transition leading-tight">Réglementaire & QHSE</div>
+          <div class="text-[11px] text-slate-500 mt-1">Habilitations électriques, SST, travail en hauteur</div>
+        </button>
+
+        <!-- Domaine 11 -->
+        <button onclick="filterByDomain('Commerce - Achats - Vente')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-blue-500 hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-blue-600 transition leading-tight">Commerce & Achats</div>
+          <div class="text-[11px] text-slate-500 mt-1">Négociation industrielle, technico-commercial</div>
+        </button>
+
+        <!-- Domaine 12 -->
+        <button onclick="filterByDomain('Gestion - Administration - Comptabilité')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="file-spreadsheet" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-emerald-600 transition leading-tight">Gestion & Comptabilité</div>
+          <div class="text-[11px] text-slate-500 mt-1">Gestion de production, ERP, administration</div>
+        </button>
+
+        <!-- Domaine 13 -->
+        <button onclick="filterByDomain('Management')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-uimm-purple hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-purple-100 text-uimm-purple flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-uimm-purple transition leading-tight">Management & Équipes</div>
+          <div class="text-[11px] text-slate-500 mt-1">Posture managériale, chef d'équipe atelier</div>
+        </button>
+
+        <!-- Domaine 14 -->
+        <button onclick="filterByDomain('Ressources Humaines - RSE')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-teal-500 hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-teal-600 transition leading-tight">RH & Démarche RSE</div>
+          <div class="text-[11px] text-slate-500 mt-1">Marque employeur, décarbonation, tuteur</div>
+        </button>
+
+        <!-- Domaine 15 -->
+        <button onclick="filterByDomain('Prestation et Conseil en entreprise')" class="domain-card text-left p-4 rounded-xl border border-slate-200 hover:border-uimm-dark hover:shadow-md transition group bg-slate-50/50 hover:bg-white">
+          <div class="w-10 h-10 rounded-lg bg-slate-200 text-uimm-dark flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i data-lucide="compass" class="w-5 h-5"></i>
+          </div>
+          <div class="font-heading font-bold text-xs text-slate-900 group-hover:text-uimm-dark transition leading-tight">Conseil & Prestations</div>
+          <div class="text-[11px] text-slate-500 mt-1">Audit de compétences, GEPP, sur-mesure</div>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 8. CATALOGUE DYNAMIQUE DES FORMATIONS AVEC FILTRES       -->
+  <!-- ======================================================== -->
+  <section class="py-16 bg-slate-50" id="catalogue">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Catalogue Header & Filter Pills -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-heading font-extrabold text-uimm-green uppercase tracking-widest">Formations du moment & Diplômes</span>
+          <h2 class="text-2xl sm:text-3xl font-heading font-black text-uimm-navy mt-1">Explorez Notre Catalogue Complet</h2>
+          <div id="active-filter-indicator" class="text-xs text-slate-500 mt-1 hidden">
+            Filtre actif : <span id="filter-name" class="font-bold text-uimm-dark bg-uimm-lightTeal px-2 py-0.5 rounded">Tous</span>
+          </div>
+        </div>
+
+        <!-- Filter tabs: Type de formation -->
+        <div class="flex flex-wrap gap-2">
+          <button onclick="filterByTag('all')" id="tag-btn-all" class="filter-tag-btn active px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-uimm-dark text-white">
+            Toutes (<span id="count-all">12</span>)
+          </button>
+          <button onclick="filterByTag('Alternance')" id="tag-btn-alt" class="filter-tag-btn px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:border-uimm-green">
+            Alternance
+          </button>
+          <button onclick="filterByTag('Formation continue')" id="tag-btn-fc" class="filter-tag-btn px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:border-uimm-purple">
+            Formation Continue
+          </button>
+          <button onclick="filterByTag('Ingénieur')" id="tag-btn-ing" class="filter-tag-btn px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:border-uimm-orange">
+            Ingénieur (ITII)
+          </button>
+        </div>
+      </div>
+
+      <!-- Training Cards Grid -->
+      <div id="trainings-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Empty state if no results -->
+      <div id="no-trainings-msg" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 p-8">
+        <i data-lucide="search-x" class="w-12 h-12 text-slate-300 mx-auto mb-3"></i>
+        <h3 class="font-heading font-bold text-lg text-slate-800">Aucune formation ne correspond à vos critères</h3>
+        <p class="text-slate-500 text-sm mt-1 mb-4">Essayez un autre mot-clé ou réinitialisez les filtres.</p>
+        <button onclick="resetFilters()" class="bg-uimm-green text-white font-bold text-xs uppercase px-4 py-2 rounded-lg">
+          Réinitialiser tous les filtres
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 9. SECTION IFTI (SUR-MESURE & INDIVIDUALISÉ)              -->
+  <!-- ======================================================== -->
+  <section class="py-16 bg-gradient-to-br from-uimm-navy via-uimm-dark to-[#004356] text-white" id="ifti">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center space-x-2 bg-uimm-green/20 border border-uimm-green/40 px-3 py-1 rounded-full text-xs font-bold text-emerald-300 mb-4 uppercase tracking-wider">
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+            <span>Dispositif exclusif UIMM</span>
+          </div>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl md:text-4xl leading-tight mb-6">
+            IFTI : L'Institut de Formation Technique de l'Industrie
+          </h2>
+          <p class="text-slate-200 text-base leading-relaxed mb-6 font-light">
+            Une méthode pédagogique innovante de <strong>formation individualisée et sur-mesure</strong> en maintenance, automatisme, électrotechnique et usinage. Chaque stagiaire avance à son propre rythme grâce à des plateaux techniques interactifs et des parcours personnalisés.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div class="flex items-start space-x-3 bg-white/5 p-3.5 rounded-xl border border-white/10">
+              <i data-lucide="calendar-check" class="w-5 h-5 text-uimm-yellow shrink-0 mt-0.5"></i>
+              <div>
+                <div class="font-bold text-xs uppercase tracking-wide">Entrées & Sorties permanentes</div>
+                <div class="text-[11px] text-slate-300">Démarrez votre formation à tout moment de l'année.</div>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3 bg-white/5 p-3.5 rounded-xl border border-white/10">
+              <i data-lucide="sliders" class="w-5 h-5 text-uimm-cyan shrink-0 mt-0.5"></i>
+              <div>
+                <div class="font-bold text-xs uppercase tracking-wide">100% sur-mesure</div>
+                <div class="text-[11px] text-slate-300">Seuls les modules nécessaires à l'entreprise sont suivis.</div>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3 bg-white/5 p-3.5 rounded-xl border border-white/10">
+              <i data-lucide="gauge" class="w-5 h-5 text-uimm-green shrink-0 mt-0.5"></i>
+              <div>
+                <div class="font-bold text-xs uppercase tracking-wide">Plateaux techniques réels</div>
+                <div class="text-[11px] text-slate-300">Mises en situation pratiques sur bancs d'essais industriels.</div>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3 bg-white/5 p-3.5 rounded-xl border border-white/10">
+              <i data-lucide="award" class="w-5 h-5 text-uimm-orange shrink-0 mt-0.5"></i>
+              <div>
+                <div class="font-bold text-xs uppercase tracking-wide">Optimisation budgétaire</div>
+                <div class="text-[11px] text-slate-300">Prise en charge OPCO 2i et réduction du temps d'absence.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <button onclick="openContactModal('Devis IFTI')" class="bg-uimm-orange hover:bg-orange-600 text-white font-heading font-bold text-xs uppercase px-5 py-3 rounded-xl transition shadow">
+              Demander un diagnostic IFTI
+            </button>
+            <a href="tel:0388123456" class="border border-white/30 hover:bg-white/10 text-white font-heading font-bold text-xs uppercase px-5 py-3 rounded-xl transition flex items-center">
+              <i data-lucide="phone" class="w-3.5 h-3.5 mr-2"></i> Échanger avec un conseiller
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-xl relative overflow-hidden">
+            <div class="text-xs uppercase font-extrabold text-uimm-cyan tracking-wider mb-2">Domaines IFTI disponibles</div>
+            <div class="space-y-3 text-xs">
+              <div class="p-3 bg-white/5 rounded-lg border border-white/5 flex items-center justify-between">
+                <span class="font-semibold">Maintenance Industrielle & Diagnostic de pannes</span>
+                <span class="text-emerald-300 text-[11px] font-bold">Strasbourg & Mulhouse</span>
+              </div>
+              <div class="p-3 bg-white/5 rounded-lg border border-white/5 flex items-center justify-between">
+                <span class="font-semibold">Automatisme & Réseaux industriels (Siemens, Schneider)</span>
+                <span class="text-emerald-300 text-[11px] font-bold">Colmar & Strasbourg</span>
+              </div>
+              <div class="p-3 bg-white/5 rounded-lg border border-white/5 flex items-center justify-between">
+                <span class="font-semibold">Électrotechnique, Schémas & Sécurité machine</span>
+                <span class="text-emerald-300 text-[11px] font-bold">Tous centres</span>
+              </div>
+              <div class="p-3 bg-white/5 rounded-lg border border-white/5 flex items-center justify-between">
+                <span class="font-semibold">Pneumatique & Hydraulique proportionnelle</span>
+                <span class="text-emerald-300 text-[11px] font-bold">Tous centres</span>
+              </div>
+            </div>
+            <div class="mt-4 pt-4 border-t border-white/10 text-[11px] text-slate-300">
+              Plus de <strong>800 salariés</strong> formés chaque année via l'IFTI en Alsace.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 10. NOS 4 CENTRES EN ALSACE & ÉCOLES PARTENAIRES         -->
+  <!-- ======================================================== -->
+  <section class="py-16 bg-white" id="centres">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-heading font-extrabold text-uimm-orange uppercase tracking-widest">Maillage territorial alsacien</span>
+        <h2 class="text-2xl sm:text-3xl font-heading font-black text-uimm-navy mt-1">4 Centres de Formation d'Excellence</h2>
+        <p class="text-slate-500 text-sm mt-2">Plus de 25 000 m² de plateaux techniques simulant les conditions réelles des entreprises de pointe.</p>
+      </div>
+
+      <!-- Tabs Navigation -->
+      <div class="flex flex-wrap justify-center gap-2 mb-8 border-b border-slate-200 pb-4">
+        <button onclick="switchCenterTab('strasbourg')" id="tab-btn-strasbourg" class="center-tab-btn active px-4 py-2 rounded-xl font-heading font-bold text-xs uppercase tracking-wider bg-uimm-navy text-white transition">
+          Strasbourg (Eckbolsheim)
+        </button>
+        <button onclick="switchCenterTab('mulhouse')" id="tab-btn-mulhouse" class="center-tab-btn px-4 py-2 rounded-xl font-heading font-bold text-xs uppercase tracking-wider bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+          Mulhouse
+        </button>
+        <button onclick="switchCenterTab('colmar')" id="tab-btn-colmar" class="center-tab-btn px-4 py-2 rounded-xl font-heading font-bold text-xs uppercase tracking-wider bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+          Colmar
+        </button>
+        <button onclick="switchCenterTab('reichshoffen')" id="tab-btn-reichshoffen" class="center-tab-btn px-4 py-2 rounded-xl font-heading font-bold text-xs uppercase tracking-wider bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+          Reichshoffen
+        </button>
+      </div>
+
+      <!-- Center Tab Contents -->
+      <div class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200">
+        
+        <!-- STRASBOURG -->
+        <div id="center-strasbourg" class="center-pane grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7">
+            <span class="bg-uimm-green/10 text-uimm-green text-xs font-black uppercase px-2.5 py-1 rounded-md">Campus Bas-Rhin Principal</span>
+            <h3 class="text-2xl font-heading font-black text-slate-900 mt-2 mb-3">Centre de Strasbourg (Eckbolsheim)</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+              Le plus grand campus industriel d'Alsace avec plus de 12 000 m² d'ateliers haute technologie : cellule robotisée industrielle, plateaux de soudage et tuyauterie certifiés, centres d'usinage 5 axes, laboratoires de maintenance connectée et salles de CAO 3D.
+            </p>
+            <div class="space-y-2 text-xs text-slate-700 mb-6">
+              <div class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 text-uimm-orange mr-2"></i> <strong>Adresse :</strong> 8 rue Gustave Adolphe Hirn, 67200 Eckbolsheim / Strasbourg</div>
+              <div class="flex items-center"><i data-lucide="phone" class="w-4 h-4 text-uimm-green mr-2"></i> <strong>Téléphone :</strong> 03 88 77 91 00</div>
+              <div class="flex items-center"><i data-lucide="bus" class="w-4 h-4 text-uimm-cyan mr-2"></i> <strong>Accès :</strong> Tram D (arrêt Poteries) ou Bus L1 / Accès autoroute A351</div>
+            </div>
+            <div class="flex flex-wrap gap-2 text-[11px] font-bold text-uimm-navy">
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">BTS CPI</span>
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">BTS Maintenance MS</span>
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">BTS Électrotechnique</span>
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">Bac Pro MSPC & TRPM</span>
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">Pôle Soudage & Tuyauterie</span>
+            </div>
+          </div>
+          <div class="lg:col-span-5">
+            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=800" alt="Atelier Strasbourg" class="rounded-xl shadow-lg w-full h-64 object-cover">
+          </div>
+        </div>
+
+        <!-- MULHOUSE -->
+        <div id="center-mulhouse" class="center-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7">
+            <span class="bg-uimm-green/10 text-uimm-green text-xs font-black uppercase px-2.5 py-1 rounded-md">Campus Haut-Rhin</span>
+            <h3 class="text-2xl font-heading font-black text-slate-900 mt-2 mb-3">Centre de Mulhouse</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+              Situé au cœur du bassin technologique du sud-Alsace, le centre de Mulhouse est spécialisé dans la mécatronique, la robotique de production, l'usinage numérique et les formations d'ingénieurs en synergie avec l'ENSISA.
+            </p>
+            <div class="space-y-2 text-xs text-slate-700 mb-6">
+              <div class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 text-uimm-orange mr-2"></i> <strong>Adresse :</strong> 5 rue de l'Est / Parc des Collines, 68100 Mulhouse</div>
+              <div class="flex items-center"><i data-lucide="phone" class="w-4 h-4 text-uimm-green mr-2"></i> <strong>Téléphone :</strong> 03 89 66 92 00</div>
+              <div class="flex items-center"><i data-lucide="bus" class="w-4 h-4 text-uimm-cyan mr-2"></i> <strong>Accès :</strong> Tram 1 & 2 / Gare TGV Mulhouse / Autoroute A36</div>
+            </div>
+            <div class="flex flex-wrap gap-2 text-[11px] font-bold text-uimm-navy">
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">BTS CRSA (Robotique)</span>
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">BTS Maintenance MS</span>
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">Bachelor Robotique</span>
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">Ingénieurs ITII / ENSISA</span>
+            </div>
+          </div>
+          <div class="lg:col-span-5">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800" alt="Atelier Mulhouse" class="rounded-xl shadow-lg w-full h-64 object-cover">
+          </div>
+        </div>
+
+        <!-- COLMAR -->
+        <div id="center-colmar" class="center-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7">
+            <span class="bg-uimm-green/10 text-uimm-green text-xs font-black uppercase px-2.5 py-1 rounded-md">Centre Centre-Alsace</span>
+            <h3 class="text-2xl font-heading font-black text-slate-900 mt-2 mb-3">Centre de Colmar</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+              Pôle d'excellence en automatisme industriel, régulation (BTS CIRA), électrotechnique et formation continue IFTI. Idéalement placé pour les entreprises du vignoble, de la plaine d'Alsace et des vallées vosgiennes.
+            </p>
+            <div class="space-y-2 text-xs text-slate-700 mb-6">
+              <div class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 text-uimm-orange mr-2"></i> <strong>Adresse :</strong> 25 rue du Logelbach, 68000 Colmar</div>
+              <div class="flex items-center"><i data-lucide="phone" class="w-4 h-4 text-uimm-green mr-2"></i> <strong>Téléphone :</strong> 03 89 21 07 00</div>
+              <div class="flex items-center"><i data-lucide="bus" class="w-4 h-4 text-uimm-cyan mr-2"></i> <strong>Accès :</strong> Lignes de bus Trace / Gare de Colmar / A35</div>
+            </div>
+            <div class="flex flex-wrap gap-2 text-[11px] font-bold text-uimm-navy">
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">BTS CIRA (Régulation)</span>
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">BTS Électrotechnique</span>
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">IFTI Automatisme</span>
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">Habilitations B1V/B2V/BR</span>
+            </div>
+          </div>
+          <div class="lg:col-span-5">
+            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80&w=800" alt="Atelier Colmar" class="rounded-xl shadow-lg w-full h-64 object-cover">
+          </div>
+        </div>
+
+        <!-- REICHSHOFFEN -->
+        <div id="center-reichshoffen" class="center-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7">
+            <span class="bg-uimm-green/10 text-uimm-green text-xs font-black uppercase px-2.5 py-1 rounded-md">Pôle Nord-Alsace</span>
+            <h3 class="text-2xl font-heading font-black text-slate-900 mt-2 mb-3">Centre de Reichshoffen</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+              Implanté au cœur du bassin industriel et ferroviaire de l'Alsace du Nord, ce centre est spécialisé en maintenance de systèmes, usinage, chaudronnerie lourde et technologies ferroviaires en lien direct avec Alstom et les sous-traitants majeurs.
+            </p>
+            <div class="space-y-2 text-xs text-slate-700 mb-6">
+              <div class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 text-uimm-orange mr-2"></i> <strong>Adresse :</strong> Rue de la Gare, 67110 Reichshoffen</div>
+              <div class="flex items-center"><i data-lucide="phone" class="w-4 h-4 text-uimm-green mr-2"></i> <strong>Téléphone :</strong> 03 88 80 87 00</div>
+              <div class="flex items-center"><i data-lucide="train" class="w-4 h-4 text-uimm-cyan mr-2"></i> <strong>Accès :</strong> Gare TER Reichshoffen / Axe Haguenau - Niederbronn</div>
+            </div>
+            <div class="flex flex-wrap gap-2 text-[11px] font-bold text-uimm-navy">
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">BTS Maintenance des Systèmes</span>
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">Bac Pro MSPC</span>
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">Titre Pro Soudage & Usinage</span>
+              <span class="bg-white px-2.5 py-1 rounded border border-slate-200">Filière Ferroviaire</span>
+            </div>
+          </div>
+          <div class="lg:col-span-5">
+            <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80&w=800" alt="Atelier Reichshoffen" class="rounded-xl shadow-lg w-full h-64 object-cover">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Partenaires Grandes Écoles -->
+      <div class="mt-10 p-6 bg-slate-100 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h4 class="font-heading font-bold text-sm text-slate-900 uppercase tracking-wide">Filière Ingénieurs par apprentissage</h4>
+          <p class="text-xs text-slate-600 mt-1">Formations d'ingénieurs en partenariat avec l'<strong>ITII Alsace</strong> et les grandes écoles alsaciennes :</p>
+        </div>
+        <div class="flex flex-wrap gap-3 font-heading font-black text-xs text-slate-700">
+          <span class="bg-white px-3 py-1.5 rounded-lg shadow-sm">INSA Strasbourg</span>
+          <span class="bg-white px-3 py-1.5 rounded-lg shadow-sm">ENSISA Mulhouse</span>
+          <span class="bg-white px-3 py-1.5 rounded-lg shadow-sm">Télécom Physique Strasbourg</span>
+          <span class="bg-white px-3 py-1.5 rounded-lg shadow-sm">ITII Alsace</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 11. ACTUALITÉS & SALONS 2026-2027 DU SITE INITIAL        -->
+  <!-- ======================================================== -->
+  <section class="py-16 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-heading font-extrabold text-uimm-cyan uppercase tracking-widest">Événements & Tendances</span>
+          <h2 class="text-2xl sm:text-3xl font-heading font-black text-uimm-navy mt-1">Actualités du Pôle Formation UIMM</h2>
+          <p class="text-slate-500 text-sm mt-1">Retrouvez nos équipes sur les salons d'Alsace et découvrez nos dossiers métiers.</p>
+        </div>
+        <button onclick="openContactModal('Demande RDV Salon')" class="text-xs font-bold text-uimm-dark hover:text-uimm-green flex items-center transition">
+          Consulter le calendrier des salons &rarr;
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Actu 1 -->
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col card-hover">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=600" alt="Salons d'orientation" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-uimm-orange text-white text-[10px] font-black uppercase px-2 py-0.5 rounded shadow">Salons 2026-2027</span>
+          </div>
+          <div class="p-5 flex-grow">
+            <div class="text-[11px] text-slate-400 mb-1">Événement • Salons & JPO</div>
+            <h3 class="font-heading font-bold text-sm text-slate-900 leading-snug mb-2 hover:text-uimm-green cursor-pointer">
+              Orientation, alternance : comment nous rencontrer en 2026-2027 ?
+            </h3>
+            <p class="text-xs text-slate-500 line-clamp-3">
+              Journées Portes Ouvertes, Salon Formation Emploi Alsace, forums métiers : venez tester nos simulateurs de soudage et piloter nos robots !
+            </p>
+          </div>
+          <div class="px-5 pb-5 pt-0">
+            <a href="https://candidature-cfai-alsace.hub3e.com" target="_blank" class="text-xs font-bold text-uimm-green hover:underline flex items-center">
+              Rencontrer nos conseillers &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Actu 2 -->
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col card-hover">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=600" alt="IA dans l'industrie" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-uimm-cyan text-white text-[10px] font-black uppercase px-2 py-0.5 rounded shadow">Innovation</span>
+          </div>
+          <div class="p-5 flex-grow">
+            <div class="text-[11px] text-slate-400 mb-1">Dossier Spécial • Industrie 4.0</div>
+            <h3 class="font-heading font-bold text-sm text-slate-900 leading-snug mb-2 hover:text-uimm-cyan cursor-pointer">
+              Les nouveaux métiers de l'IA dans l'industrie alsacienne
+            </h3>
+            <p class="text-xs text-slate-500 line-clamp-3">
+              Maintenance prédictive, vision industrielle, jumeaux numériques : comment le Pôle prépare les techniciens et ingénieurs aux usines intelligentes.
+            </p>
+          </div>
+          <div class="px-5 pb-5 pt-0">
+            <button onclick="filterByDomain('Informatique - Numérique - Cybersécurité - IA')" class="text-xs font-bold text-uimm-cyan hover:underline flex items-center">
+              Découvrir les formations IA &rarr;
+            </button>
+          </div>
+        </article>
+
+        <!-- Actu 3 -->
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col card-hover">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600" alt="Tuteur entreprise" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-uimm-dark text-white text-[10px] font-black uppercase px-2 py-0.5 rounded shadow">Guide Tuteur</span>
+          </div>
+          <div class="p-5 flex-grow">
+            <div class="text-[11px] text-slate-400 mb-1">Ressources RH • Entreprises</div>
+            <h3 class="font-heading font-bold text-sm text-slate-900 leading-snug mb-2 hover:text-uimm-dark cursor-pointer">
+              Comment accueillir et accompagner un alternant dans son entreprise ?
+            </h3>
+            <p class="text-xs text-slate-500 line-clamp-3">
+              Le guide complet pour les maîtres d'apprentissage et tuteurs industriels : réussir l'onboarding, sécuriser le parcours et pérenniser l'embauche.
+            </p>
+          </div>
+          <div class="px-5 pb-5 pt-0">
+            <button onclick="openContactModal('Guide Tuteur')" class="text-xs font-bold text-uimm-dark hover:underline flex items-center">
+              Télécharger la fiche pratique &rarr;
+            </button>
+          </div>
+        </article>
+
+        <!-- Actu 4 -->
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col card-hover">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=600" alt="Reconversion industrie" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-uimm-pink text-white text-[10px] font-black uppercase px-2 py-0.5 rounded shadow">Emploi & Reconversion</span>
+          </div>
+          <div class="p-5 flex-grow">
+            <div class="text-[11px] text-slate-400 mb-1">Guide Carrière • 125 000 Emplois</div>
+            <h3 class="font-heading font-bold text-sm text-slate-900 leading-snug mb-2 hover:text-uimm-pink cursor-pointer">
+              Reconversion professionnelle vers l'industrie : le guide complet
+            </h3>
+            <p class="text-xs text-slate-500 line-clamp-3">
+              Vous avez 30, 40 ou 50 ans ? En Alsace, 5 000 postes sont à pourvoir chaque année. Dispositifs Transition Pro, POEC, CPF : suivez le guide.
+            </p>
+          </div>
+          <div class="px-5 pb-5 pt-0">
+            <button onclick="openContactModal('Reconversion professionnelle')" class="text-xs font-bold text-uimm-pink hover:underline flex items-center">
+              Faire le point avec un coach &rarr;
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 12. TÉMOIGNAGES & ENTREPRISES PARTENAIRES                -->
+  <!-- ======================================================== -->
+  <section class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-xs font-heading font-extrabold text-uimm-green uppercase tracking-widest">Ils nous font confiance</span>
+        <h2 class="text-2xl font-heading font-black text-uimm-navy mt-1">Plus de 1 250 Entreprises Partenaires</h2>
+      </div>
+
+      <!-- Partner Logos / badges -->
+      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 opacity-70 mb-12">
+        <span class="font-heading font-black text-slate-400 text-lg tracking-wider">ALSTOM</span>
+        <span class="font-heading font-black text-slate-400 text-lg tracking-wider">LIEBHERR</span>
+        <span class="font-heading font-black text-slate-400 text-lg tracking-wider">HAGER GROUP</span>
+        <span class="font-heading font-black text-slate-400 text-lg tracking-wider">SEW-USOCOME</span>
+        <span class="font-heading font-black text-slate-400 text-lg tracking-wider">LILLY FRANCE</span>
+        <span class="font-heading font-black text-slate-400 text-lg tracking-wider">PEUGEOT MOTOCYCLES</span>
+        <span class="font-heading font-black text-slate-400 text-lg tracking-wider">KUHN</span>
+        <span class="font-heading font-black text-slate-400 text-lg tracking-wider">TIMKEN</span>
+      </div>
+
+      <!-- Testimonial card -->
+      <div class="bg-gradient-to-r from-slate-50 to-emerald-50/30 rounded-2xl p-8 border border-slate-200 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" alt="Apprentie UIMM Alsace" class="w-20 h-20 rounded-full object-cover shadow-md border-2 border-white shrink-0">
+        <div class="text-slate-700 text-sm">
+          <p class="italic leading-relaxed">
+            « J'ai fait mon BTS Conception de Produits Industriels en alternance au Pôle formation de Strasbourg. J'ai été embauchée en CDI dans mon entreprise d'accueil avant même les résultats des examens. L'encadrement des formateurs et la modernité des logiciels 3D font toute la différence ! »
+          </p>
+          <div class="mt-3 font-heading font-bold text-xs text-uimm-navy">
+            Clara M. — <span class="font-normal text-slate-500">Technicienne Bureau d'Études (Promo BTS CPI 2024)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 13. FOOTER OFFICIEL COMPLET                              -->
+  <!-- ======================================================== -->
+  <footer class="bg-uimm-navy text-slate-300 pt-16 pb-8 border-t border-white/10 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        
+        <!-- COL 1: LOGO & ABOUT -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center space-x-3 mb-4">
+            <img src="assets/logo.jpg" alt="Logo UIMM Alsace" class="h-14 w-auto object-contain rounded bg-white p-1">
+            <div>
+              <div class="font-heading font-black text-white text-sm">Pôle formation UIMM Alsace</div>
+              <div class="text-uimm-cyan text-xs font-semibold">CFAI Alsace • AFPI Alsace • ITII Alsace</div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-6 max-w-sm">
+            Le partenaire incontournable de votre avenir industriel en Alsace. Formez-vous aujourd'hui pour performer demain. Plus de 30 ans au service de la métallurgie et de l'ensemble des filières de production.
+          </p>
+          <div class="flex items-center space-x-3 text-white">
+            <a href="https://www.linkedin.com/company/pole-formation-uimm-alsace/" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-white/10 hover:bg-uimm-green flex items-center justify-center transition" title="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            <a href="https://www.facebook.com/PoleFormationUIMMAlsace" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-white/10 hover:bg-uimm-cyan flex items-center justify-center transition" title="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+            <a href="https://www.youtube.com/@poleformationuimmalsace" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-white/10 hover:bg-uimm-red flex items-center justify-center transition" title="YouTube"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+            <a href="https://www.instagram.com/poleformationuimmalsace/" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-white/10 hover:bg-uimm-pink flex items-center justify-center transition" title="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- COL 2: NOS 4 CENTRES -->
+        <div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-white mb-4">Nos 4 Centres</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#centres" onclick="switchCenterTab('strasbourg')" class="hover:text-white transition flex items-center"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-1.5 text-uimm-green"></i> Strasbourg (Eckbolsheim)</a></li>
+            <li><a href="#centres" onclick="switchCenterTab('mulhouse')" class="hover:text-white transition flex items-center"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-1.5 text-uimm-green"></i> Mulhouse</a></li>
+            <li><a href="#centres" onclick="switchCenterTab('colmar')" class="hover:text-white transition flex items-center"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-1.5 text-uimm-green"></i> Colmar</a></li>
+            <li><a href="#centres" onclick="switchCenterTab('reichshoffen')" class="hover:text-white transition flex items-center"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-1.5 text-uimm-green"></i> Reichshoffen</a></li>
+            <li class="pt-2 text-[11px] text-slate-400">Campus ingénieurs : ITII Alsace, INSA, ENSISA</li>
+          </ul>
+        </div>
+
+        <!-- COL 3: LIENS UTILES & PORTAILS -->
+        <div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-white mb-4">Portails & Accès</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://candidature-cfai-alsace.hub3e.com" target="_blank" class="hover:text-white transition flex items-center font-bold text-uimm-yellow"><i data-lucide="external-link" class="w-3 h-3 mr-1.5"></i> Candidater (Hub3E)</a></li>
+            <li><a href="https://extranet.cfai-alsace.fr/netypareo/index.php" target="_blank" class="hover:text-white transition flex items-center"><i data-lucide="external-link" class="w-3 h-3 mr-1.5"></i> NetYParéo Apprentis</a></li>
+            <li><a href="https://connect.easi-training.fr/#/login" target="_blank" class="hover:text-white transition flex items-center"><i data-lucide="external-link" class="w-3 h-3 mr-1.5"></i> EASI E-learning</a></li>
+            <li><a href="#catalogue" class="hover:text-white transition">Rechercher une formation</a></li>
+            <li><a href="#ifti" class="hover:text-white transition">Solution sur-mesure IFTI</a></li>
+          </ul>
+        </div>
+
+        <!-- COL 4: CONTACT & ACCUEIL -->
+        <div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-white mb-4">Contact</h4>
+          <p class="text-white text-base font-black mb-1">03 88 12 34 56</p>
+          <p class="text-xs text-slate-400 mb-4">contact@formation-industries-alsace.fr</p>
+          <button onclick="openContactModal()" class="w-full bg-uimm-green hover:bg-uimm-greenHover text-white font-heading font-bold text-xs uppercase py-2.5 rounded-lg transition shadow">
+            Formulaire de Contact
+          </button>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM BAR WITH LABELS & LEGAL -->
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div>
+          &copy; 2026 Pôle formation UIMM Alsace • CFAI Alsace • AFPI Alsace • Tous droits réservés.
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs">
+          <a href="#" onclick="alert('Mentions légales : Pôle formation UIMM Alsace, 8 rue Gustave Adolphe Hirn, 67200 Eckbolsheim.')" class="hover:text-white transition">Mentions légales</a>
+          <a href="#" onclick="alert('Données personnelles : Traitement conforme au RGPD.')" class="hover:text-white transition">Politique de confidentialité</a>
+          <a href="#" onclick="alert('Cookies : Seuls les cookies techniques indispensables sont utilisés.')" class="hover:text-white transition">Gestion des cookies</a>
+          <span class="text-uimm-green font-bold">Certifié QUALIOPI</span>
+        </div>
+      </div>
+
+      <div class="text-center text-[10px] text-slate-500 mt-4">
+        Avec le soutien de la Région Grand Est, de l'Union Européenne et de l'OPCO 2i.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: DÉTAIL D'UNE FORMATION                            -->
+  <!-- ======================================================== -->
+  <div id="training-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 p-6 relative">
+      <button onclick="closeTrainingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 p-1.5 rounded-full hover:bg-slate-100 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center space-x-2 mb-2">
+        <span id="modal-tag" class="bg-uimm-lightTeal text-uimm-dark text-[11px] font-black uppercase px-2.5 py-0.5 rounded">Alternance</span>
+        <span id="modal-domain" class="text-xs text-uimm-green font-bold uppercase">Maintenance</span>
+      </div>
+
+      <h3 id="modal-title" class="text-xl sm:text-2xl font-heading font-black text-slate-900 mb-4">Titre de la Formation</h3>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs mb-6">
+        <div>
+          <span class="text-slate-400 text-[10px] uppercase font-bold block">Durée</span>
+          <span id="modal-duration" class="font-bold text-slate-800">2 ans</span>
+        </div>
+        <div>
+          <span class="text-slate-400 text-[10px] uppercase font-bold block">Centres</span>
+          <span id="modal-location" class="font-bold text-slate-800">Strasbourg, Mulhouse</span>
+        </div>
+        <div>
+          <span class="text-slate-400 text-[10px] uppercase font-bold block">Niveau de sortie</span>
+          <span id="modal-level" class="font-bold text-slate-800">Bac+2 (BTS)</span>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-xs text-slate-600 mb-6">
+        <div>
+          <h4 class="font-heading font-bold text-slate-800 uppercase text-xs mb-1">Objectifs de la formation :</h4>
+          <p id="modal-desc">Description des compétences développées...</p>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-slate-800 uppercase text-xs mb-1">Débouchés & Métiers visés :</h4>
+          <p id="modal-jobs">Technicien supérieur de maintenance, chef d'équipe, etc.</p>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-slate-800 uppercase text-xs mb-1">Rythme d'alternance :</h4>
+          <p id="modal-rhythm">2 semaines en entreprise / 2 semaines au Pôle formation.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-slate-100">
+        <a id="modal-apply-btn" href="https://candidature-cfai-alsace.hub3e.com" target="_blank" class="flex-1 bg-uimm-green hover:bg-uimm-greenHover text-white py-3 rounded-xl text-center font-heading font-bold text-xs uppercase shadow transition">
+          Candidater à cette session
+        </a>
+        <button id="modal-fav-btn" onclick="toggleCurrentModalFav()" class="border border-slate-200 hover:bg-slate-50 text-slate-700 py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center transition">
+          <i data-lucide="heart" class="w-4 h-4 mr-1.5 text-uimm-red"></i> Ajouter aux favoris
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: MES FAVORIS                                       -->
+  <!-- ======================================================== -->
+  <div id="favorites-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-slate-100 p-6 relative">
+      <button onclick="closeFavoritesModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 p-1.5 rounded-full hover:bg-slate-100 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center space-x-2 mb-4">
+        <i data-lucide="heart" class="w-5 h-5 text-uimm-red"></i>
+        <h3 class="font-heading font-bold text-lg text-slate-900">Mes Formations Favorites</h3>
+      </div>
+
+      <div id="favorites-list" class="space-y-3 mb-6">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="flex justify-between items-center pt-4 border-t border-slate-100 text-xs">
+        <button onclick="clearAllFavorites()" class="text-slate-400 hover:text-uimm-red underline">
+          Vider la sélection
+        </button>
+        <a href="https://candidature-cfai-alsace.hub3e.com" target="_blank" class="bg-uimm-green text-white font-bold px-4 py-2 rounded-lg">
+          Candidater pour ma sélection
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: FORMULAIRE DE CONTACT GÉNÉRAL / DEVIS             -->
+  <!-- ======================================================== -->
+  <div id="contact-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 p-6 relative">
+      <button onclick="closeContactModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 p-1.5 rounded-full hover:bg-slate-100 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <h3 class="font-heading font-black text-xl text-slate-900 mb-1">Contactez le Pôle Formation UIMM</h3>
+      <p class="text-xs text-slate-500 mb-4">Nos conseillers en formation vous répondent sous 24 à 48 heures.</p>
+
+      <form id="contact-form" onsubmit="event.preventDefault(); submitContactForm();" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Vous êtes :</label>
+          <select id="contact-profile" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:outline-none focus:border-uimm-green">
+            <option value="Jeune / Futur Apprenti">Jeune / Futur Apprenti</option>
+            <option value="Entreprise / Recruteur">Entreprise / Recruteur</option>
+            <option value="Salarié en reconversion / CPF">Salarié en poste / Projet CPF</option>
+            <option value="Demandeur d'emploi">Demandeur d'emploi</option>
+            <option value="Parent d'élève">Parent d'élève</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Prénom :</label>
+            <input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:outline-none focus:border-uimm-green" placeholder="Jean">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Nom :</label>
+            <input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:outline-none focus:border-uimm-green" placeholder="Dupont">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Email :</label>
+            <input type="email" required class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:outline-none focus:border-uimm-green" placeholder="jean.dupont@email.fr">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Téléphone :</label>
+            <input type="tel" required class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:outline-none focus:border-uimm-green" placeholder="06 12 34 56 78">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Centre souhaité :</label>
+          <select id="contact-center" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:outline-none focus:border-uimm-green">
+            <option value="Strasbourg">Strasbourg (Eckbolsheim)</option>
+            <option value="Mulhouse">Mulhouse</option>
+            <option value="Colmar">Colmar</option>
+            <option value="Reichshoffen">Reichshoffen</option>
+            <option value="Peu importe">Peu importe / En ligne</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Votre message / Projet :</label>
+          <textarea id="contact-msg" rows="3" required class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:outline-none focus:border-uimm-green" placeholder="Bonjour, je souhaite des informations sur le BTS Maintenance..."></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-uimm-green hover:bg-uimm-greenHover text-white font-heading font-bold text-xs uppercase py-3 rounded-xl transition shadow">
+          Envoyer ma demande
+        </button>
+      </form>
+
+      <div id="contact-success" class="hidden text-center py-6">
+        <i data-lucide="check-circle" class="w-12 h-12 text-uimm-green mx-auto mb-2"></i>
+        <h4 class="font-heading font-bold text-base text-slate-900">Demande envoyée avec succès !</h4>
+        <p class="text-xs text-slate-500 mt-1">Un conseiller du Pôle Formation UIMM Alsace vous recontactera rapidement.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- JAVASCRIPT: DATA & INTERACTIVITY                         -->
+  <!-- ======================================================== -->
+  <script>
+    // --------------------------------------------------------
+    // FORMATIONS DATA (Synchronized with official Alsace site)
+    // --------------------------------------------------------
+    const trainingsData = [
+      {
+        id: 'bts-cpi',
+        tag: 'Alternance',
+        title: 'BTS Conception de Produits Industriels (CPI)',
+        level: 'Bac+2',
+        duration: '2 ans',
+        domain: 'Méthodes - Études - Conception',
+        location: 'Strasbourg',
+        desc: 'Concevez et modélisez les pièces et sous-ensembles mécaniques de demain en CAO 3D (SolidWorks, Catia). Vous travaillez au bureau d\'études en étroite collaboration avec la fabrication.',
+        jobs: 'Technicien bureau d\'études, projeteur CAO, concepteur de produits industriels.',
+        rhythm: '2 semaines en entreprise / 2 semaines au Pôle formation.'
+      },
+      {
+        id: 'bts-ms',
+        tag: 'Alternance',
+        title: 'BTS Maintenance des Systèmes (MS) - Option Systèmes de Production',
+        level: 'Bac+2',
+        duration: '2 ans',
+        domain: 'Maintenance - Techniques industrielles',
+        location: 'Strasbourg, Mulhouse, Reichshoffen',
+        desc: 'Assurez la disponibilité, la sécurité et l\'amélioration continue des lignes de production automatisées. Diagnostic de pannes, GMAO et maintenance prédictive Industrie 4.0.',
+        jobs: 'Technicien supérieur de maintenance, chef d\'équipe maintenance, responsable GMAO.',
+        rhythm: 'Alternance quinzaine / quinzaine ou 2 jours centre / 3 jours entreprise.'
+      },
+      {
+        id: 'bts-crsa',
+        tag: 'Alternance',
+        title: 'BTS Conception et Réalisation de Systèmes Automatiques (CRSA)',
+        level: 'Bac+2',
+        duration: '2 ans',
+        domain: 'Automatisme - Robotique',
+        location: 'Mulhouse, Strasbourg',
+        desc: 'Créez et programmez des lignes de fabrication robotisées sur-mesure. Intégrez des automates, robots industriels et cobots communicants.',
+        jobs: 'Automaticien, roboticien, technicien d\'intégration systèmes, metteur au point.',
+        rhythm: 'Alternance quinzaine / quinzaine.'
+      },
+      {
+        id: 'bts-elec',
+        tag: 'Alternance',
+        title: 'BTS Électrotechnique',
+        level: 'Bac+2',
+        duration: '2 ans',
+        domain: 'Électricité - Électrotechnique - Énergie',
+        location: 'Strasbourg, Colmar',
+        desc: 'Maîtrisez la distribution d\'énergie électrique moyenne et basse tension, les armoires de commande et l\'efficacité énergétique industrielle.',
+        jobs: 'Électrotechnicien de bureau d\'études, chargé d\'affaires électricité, technicien de maintenance HT/BT.',
+        rhythm: 'Alternance quinzaine / quinzaine.'
+      },
+      {
+        id: 'bts-cira',
+        tag: 'Alternance',
+        title: 'BTS Contrôle Industriel et Régulation Automatique (CIRA)',
+        level: 'Bac+2',
+        duration: '2 ans',
+        domain: 'Automatisme - Robotique',
+        location: 'Colmar',
+        desc: 'Spécialiste de la régulation de procédés continus (température, pression, débit) dans la chimie, pharmacie, agroalimentaire et traitement des eaux.',
+        jobs: 'Instrumentiste, régulateur de process, technicien d\'essais et de contrôle industriel.',
+        rhythm: 'Alternance 2 semaines / 2 semaines.'
+      },
+      {
+        id: 'bacpro-mspc',
+        tag: 'Alternance',
+        title: 'Bac Pro Maintenance des Systèmes de Production Connectés (MSPC)',
+        level: 'Bac Pro',
+        duration: '2 à 3 ans',
+        domain: 'Maintenance - Techniques industrielles',
+        location: 'Strasbourg, Reichshoffen',
+        desc: 'Apprenez le dépannage électromécanique, le changement de composants et le suivi des machines connectées en usine.',
+        jobs: 'Électromécanicien, technicien de maintenance industrielle, agent de maintenance préventive.',
+        rhythm: '1 semaine centre / 1 semaine entreprise.'
+      },
+      {
+        id: 'bacpro-trpm',
+        tag: 'Alternance',
+        title: 'Bac Pro Technicien en Réalisation de Produits Mécaniques (TRPM - Usinage)',
+        level: 'Bac Pro',
+        duration: '2 à 3 ans',
+        domain: 'Usinage - Outillage',
+        location: 'Strasbourg, Mulhouse',
+        desc: 'Programmez et pilotez des tours et fraiseuses à commande numérique pour fabriquer des pièces de haute précision aéronautique ou médicale.',
+        jobs: 'Tourneur-fraiseur CN, régleur sur machine-outil, usineur outilleur.',
+        rhythm: 'Alternance quinzaine / quinzaine.'
+      },
+      {
+        id: 'bachelor-robotique',
+        tag: 'Alternance',
+        title: 'Bachelor Intégrateur en Robotique Industrielle & Cobotique',
+        level: 'Bac+3',
+        duration: '1 an',
+        domain: 'Automatisme - Robotique',
+        location: 'Mulhouse',
+        desc: 'Formez-vous aux cellules robotisées complexes (Kuka, Fanuc, ABB, Stäubli), à la vision 2D/3D et à la sécurité homme-robot.',
+        jobs: 'Intégrateur robotique, chargé de projet automatisation, coordinateur robotique.',
+        rhythm: '3 semaines entreprise / 1 semaine centre.'
+      },
+      {
+        id: 'ing-meca',
+        tag: 'Ingénieur',
+        title: 'Ingénieur Génie Mécanique & Systèmes de Production (ITII Alsace / INSA)',
+        level: 'Bac+5 (Ingénieur)',
+        duration: '3 ans',
+        domain: 'Méthodes - Études - Conception',
+        location: 'Strasbourg',
+        desc: 'Formation d\'ingénieur par alternance délivrée par l\'INSA Strasbourg et le Pôle formation UIMM Alsace. Management de projets industriels et R&D.',
+        jobs: 'Ingénieur méthodes, ingénieur R&D mécanique, responsable production.',
+        rhythm: 'Alternance par périodes de 1 à 3 mois.'
+      },
+      {
+        id: 'ing-prod',
+        tag: 'Ingénieur',
+        title: 'Ingénieur Systèmes de Production & Mécatronique (ITII Alsace / ENSISA)',
+        level: 'Bac+5 (Ingénieur)',
+        duration: '3 ans',
+        domain: 'Production - Performance industrielle',
+        location: 'Mulhouse',
+        desc: 'Formation d\'ingénieur par alternance avec l\'ENSISA Mulhouse : pilotage des usines du futur, lean manufacturing et digital manufacturing.',
+        jobs: 'Ingénieur amélioration continue, ingénieur production, ingénieur automaticien.',
+        rhythm: 'Alternance par périodes modulaires.'
+      },
+      {
+        id: 'fc-safety',
+        tag: 'Formation continue',
+        title: 'Sécurité Machine « SAFETY Advanced » TIA Portal (Siemens)',
+        level: 'Certification Pro',
+        duration: '3 jours',
+        domain: 'Automatisme - Robotique',
+        location: 'Colmar, Strasbourg',
+        desc: 'Maîtrisez la directive machine, la programmation des automates de sécurité S7-1500F et la configuration des fonctions d\'arrêt d\'urgence.',
+        jobs: 'Automaticiens, techniciens de maintenance, responsables sécurité machine.',
+        rhythm: 'Stage court intensif (21 heures).'
+      },
+      {
+        id: 'fc-soudage',
+        tag: 'Formation continue',
+        title: 'Perfectionnement Soudage TIG / MIG-MAG & Qualifications ISO 9606',
+        level: 'CQP / Licence',
+        duration: '5 à 10 jours',
+        domain: 'Chaudronnerie - Tuyauterie - Soudage',
+        location: 'Strasbourg, Reichshoffen',
+        desc: 'Préparation et passage de qualifications soudeur selon normes européennes ISO 9606 sur acier, inox et aluminium.',
+        jobs: 'Soudeurs professionnels, chaudronniers, tuyauteurs.',
+        rhythm: 'Modules personnalisés en atelier.'
+      }
+    ];
+
+    // Favorites in LocalStorage
+    let favorites = JSON.parse(localStorage.getItem('uimm_favorites') || '[]');
+    let currentSelectedModalId = null;
+
+    // --------------------------------------------------------
+    // RENDER TRAININGS CATALOG
+    // --------------------------------------------------------
+    function renderTrainings(filterTag = 'all', searchKeyword = '', searchDomain = '') {
+      const grid = document.getElementById('trainings-grid');
+      const emptyMsg = document.getElementById('no-trainings-msg');
+      grid.innerHTML = '';
+
+      const filtered = trainingsData.filter(item => {
+        // Tag match
+        if (filterTag !== 'all') {
+          if (filterTag === 'Ingénieur' && item.tag !== 'Ingénieur') return false;
+          if (filterTag !== 'Ingénieur' && item.tag !== filterTag) return false;
+        }
+
+        // Domain match
+        if (searchDomain && !item.domain.toLowerCase().includes(searchDomain.toLowerCase())) {
+          return false;
+        }
+
+        // Keyword match
+        if (searchKeyword) {
+          const kw = searchKeyword.toLowerCase();
+          const matchTitle = item.title.toLowerCase().includes(kw);
+          const matchDesc = item.desc.toLowerCase().includes(kw);
+          const matchDomain = item.domain.toLowerCase().includes(kw);
+          const matchLocation = item.location.toLowerCase().includes(kw);
+          if (!matchTitle && !matchDesc && !matchDomain && !matchLocation) return false;
+        }
+
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        emptyMsg.classList.remove('hidden');
+      } else {
+        emptyMsg.classList.add('hidden');
+      }
+
+      filtered.forEach(t => {
+        const isFav = favorites.includes(t.id);
+        const card = document.createElement('div');
+        card.className = 'card-hover bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden flex flex-col hover:border-slate-300 transition';
+        
+        let tagColor = 'bg-slate-100 text-slate-700';
+        if (t.tag === 'Alternance') tagColor = 'bg-emerald-50 text-uimm-green border border-emerald-200';
+        else if (t.tag === 'Formation continue') tagColor = 'bg-purple-50 text-uimm-purple border border-purple-200';
+        else if (t.tag === 'Ingénieur') tagColor = 'bg-amber-50 text-amber-700 border border-amber-200';
+
+        card.innerHTML = `
+          <div class="p-6 flex-grow">
+            <div class="flex items-start justify-between gap-2 mb-3">
+              <span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider ${tagColor}">
+                ${t.tag}
+              </span>
+              <button onclick="toggleFav('${t.id}', event)" class="p-1 rounded-full text-slate-300 hover:text-uimm-red transition ${isFav ? 'text-uimm-red' : ''}" title="${isFav ? 'Retirer des favoris' : 'Ajouter aux favoris'}">
+                <i data-lucide="heart" class="w-5 h-5 ${isFav ? 'fill-uimm-red text-uimm-red' : ''}"></i>
+              </button>
+            </div>
+
+            <div class="text-[11px] font-extrabold text-uimm-green uppercase tracking-wide mb-1.5">${t.domain}</div>
+            
+            <h3 class="font-heading font-bold text-base text-slate-900 leading-snug mb-3">
+              ${t.title}
+            </h3>
+
+            <p class="text-xs text-slate-500 line-clamp-2 mb-4 leading-relaxed">
+              ${t.desc}
+            </p>
+
+            <div class="flex flex-wrap gap-2 text-[11px] font-semibold text-slate-600">
+              <span class="inline-flex items-center bg-slate-50 px-2 py-1 rounded border border-slate-200">
+                <i data-lucide="map-pin" class="w-3 h-3 mr-1 text-uimm-orange"></i> ${t.location}
+              </span>
+              <span class="inline-flex items-center bg-slate-50 px-2 py-1 rounded border border-slate-200">
+                <i data-lucide="clock" class="w-3 h-3 mr-1 text-slate-400"></i> ${t.duration}
+              </span>
+              <span class="inline-flex items-center bg-slate-50 px-2 py-1 rounded border border-slate-200">
+                <i data-lucide="award" class="w-3 h-3 mr-1 text-uimm-cyan"></i> ${t.level}
+              </span>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-50/70 border-t border-slate-100 flex items-center justify-between gap-2">
+            <button onclick="openTrainingModal('${t.id}')" class="text-xs font-heading font-bold text-uimm-dark hover:text-uimm-green flex items-center transition">
+              <span>Découvrir le programme</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+            </button>
+            <a href="https://candidature-cfai-alsace.hub3e.com" target="_blank" class="bg-uimm-green hover:bg-uimm-greenHover text-white text-[11px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">
+              Candidater
+            </a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      // Re-initialize Lucide icons
+      lucide.createIcons();
+      updateFavBadge();
+    }
+
+    // --------------------------------------------------------
+    // FILTER CONTROLLERS
+    // --------------------------------------------------------
+    let currentTag = 'all';
+
+    function filterByTag(tag) {
+      currentTag = tag;
+      document.querySelectorAll('.filter-tag-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-uimm-dark', 'text-white');
+        btn.classList.add('bg-white', 'text-slate-700');
+      });
+
+      let activeBtn = document.getElementById('tag-btn-all');
+      if (tag === 'Alternance') activeBtn = document.getElementById('tag-btn-alt');
+      else if (tag === 'Formation continue') activeBtn = document.getElementById('tag-btn-fc');
+      else if (tag === 'Ingénieur') activeBtn = document.getElementById('tag-btn-ing');
+
+      activeBtn.classList.add('active', 'bg-uimm-dark', 'text-white');
+      activeBtn.classList.remove('bg-white', 'text-slate-700');
+
+      renderTrainings(tag);
+      document.getElementById('catalogue').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function filterByDomain(domainName) {
+      document.getElementById('search-domain').value = domainName;
+      document.getElementById('filter-name').innerText = domainName;
+      document.getElementById('active-filter-indicator').classList.remove('hidden');
+      renderTrainings('all', '', domainName);
+      document.getElementById('catalogue').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function triggerSearch() {
+      const kw = document.getElementById('search-keyword').value;
+      const domain = document.getElementById('search-domain').value;
+      renderTrainings('all', kw, domain);
+      document.getElementById('catalogue').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function quickFilter(kw) {
+      document.getElementById('search-keyword').value = kw;
+      renderTrainings('all', kw, '');
+      document.getElementById('catalogue').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function resetFilters() {
+      document.getElementById('search-keyword').value = '';
+      document.getElementById('search-domain').value = '';
+      document.getElementById('active-filter-indicator').classList.add('hidden');
+      filterByTag('all');
+    }
+
+    // --------------------------------------------------------
+    // CENTER TABS CONTROLLER
+    // --------------------------------------------------------
+    function switchCenterTab(centerId) {
+      document.querySelectorAll('.center-pane').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.center-tab-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-uimm-navy', 'text-white');
+        btn.classList.add('bg-slate-100', 'text-slate-700');
+      });
+
+      const pane = document.getElementById(`center-${centerId}`);
+      if (pane) pane.classList.remove('hidden');
+
+      const btn = document.getElementById(`tab-btn-${centerId}`);
+      if (btn) {
+        btn.classList.add('active', 'bg-uimm-navy', 'text-white');
+        btn.classList.remove('bg-slate-100', 'text-slate-700');
+      }
+    }
+
+    // --------------------------------------------------------
+    // MODAL HANDLERS
+    // --------------------------------------------------------
+    function openTrainingModal(id) {
+      const t = trainingsData.find(item => item.id === id);
+      if (!t) return;
+      currentSelectedModalId = id;
+
+      document.getElementById('modal-title').innerText = t.title;
+      document.getElementById('modal-tag').innerText = t.tag;
+      document.getElementById('modal-domain').innerText = t.domain;
+      document.getElementById('modal-duration').innerText = t.duration;
+      document.getElementById('modal-location').innerText = t.location;
+      document.getElementById('modal-level').innerText = t.level;
+      document.getElementById('modal-desc').innerText = t.desc;
+      document.getElementById('modal-jobs').innerText = t.jobs;
+      document.getElementById('modal-rhythm').innerText = t.rhythm;
+
+      const isFav = favorites.includes(id);
+      const favBtn = document.getElementById('modal-fav-btn');
+      favBtn.innerHTML = isFav 
+        ? `<i data-lucide="heart" class="w-4 h-4 mr-1.5 fill-uimm-red text-uimm-red"></i> Retirer des favoris`
+        : `<i data-lucide="heart" class="w-4 h-4 mr-1.5 text-uimm-red"></i> Ajouter aux favoris`;
+
+      document.getElementById('training-modal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeTrainingModal() {
+      document.getElementById('training-modal').classList.add('hidden');
+      currentSelectedModalId = null;
+    }
+
+    function toggleCurrentModalFav() {
+      if (!currentSelectedModalId) return;
+      toggleFav(currentSelectedModalId);
+      openTrainingModal(currentSelectedModalId);
+    }
+
+    // Favorites
+    function toggleFav(id, event) {
+      if (event) event.stopPropagation();
+      if (favorites.includes(id)) {
+        favorites = favorites.filter(favId => favId !== id);
+      } else {
+        favorites.push(id);
+      }
+      localStorage.setItem('uimm_favorites', JSON.stringify(favorites));
+      renderTrainings(currentTag, document.getElementById('search-keyword').value, document.getElementById('search-domain').value);
+      updateFavBadge();
+    }
+
+    function updateFavBadge() {
+      const badge = document.getElementById('fav-count-badge');
+      if (badge) badge.innerText = favorites.length;
+    }
+
+    function openFavoritesModal() {
+      const container = document.getElementById('favorites-list');
+      container.innerHTML = '';
+
+      if (favorites.length === 0) {
+        container.innerHTML = `<div class="text-center py-8 text-slate-400 text-xs">Aucune formation dans vos favoris pour l'instant.</div>`;
+      } else {
+        favorites.forEach(favId => {
+          const t = trainingsData.find(item => item.id === favId);
+          if (!t) return;
+          const row = document.createElement('div');
+          row.className = 'p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-between text-xs';
+          row.innerHTML = `
+            <div>
+              <div class="font-bold text-slate-800">${t.title}</div>
+              <div class="text-[11px] text-slate-500">${t.location} • ${t.level}</div>
+            </div>
+            <button onclick="toggleFav('${t.id}'); openFavoritesModal();" class="text-slate-400 hover:text-uimm-red p-1">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          `;
+          container.appendChild(row);
+        });
+      }
+
+      document.getElementById('favorites-modal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeFavoritesModal() {
+      document.getElementById('favorites-modal').classList.add('hidden');
+    }
+
+    function clearAllFavorites() {
+      favorites = [];
+      localStorage.removeItem('uimm_favorites');
+      openFavoritesModal();
+      renderTrainings();
+    }
+
+    // Contact Modal
+    function openContactModal(context = '') {
+      document.getElementById('contact-success').classList.add('hidden');
+      document.getElementById('contact-form').classList.remove('hidden');
+      if (context) {
+        document.getElementById('contact-msg').value = `Bonjour, je souhaite des informations concernant : ${context}`;
+      }
+      document.getElementById('contact-modal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeContactModal() {
+      document.getElementById('contact-modal').classList.add('hidden');
+    }
+
+    function submitContactForm() {
+      document.getElementById('contact-form').classList.add('hidden');
+      document.getElementById('contact-success').classList.remove('hidden');
+      lucide.createIcons();
+      setTimeout(() => {
+        closeContactModal();
+      }, 3500);
+    }
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Initial render
+    window.addEventListener('DOMContentLoaded', () => {
+      renderTrainings();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
